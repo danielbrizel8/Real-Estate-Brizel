@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import data from "./data.json";
-import  "./PropertyPage.css";
+import "./PropertyPage.css";
 import BedRoundedIcon from '@mui/icons-material/BedRounded';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -52,7 +52,9 @@ function PropertyPage() {
             </div>
           </div>
 
-          <div id="price-container">{price}$</div>
+          <div id="price-container">
+            {price}$
+          </div>
         </div>
       </div>
     </div>

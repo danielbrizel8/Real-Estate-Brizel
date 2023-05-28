@@ -56,7 +56,6 @@
     margin: 5px;
     border-radius: 15px;
     font-size: 20px;
-    cursor: pointer;
 }
 
 #adress:hover{
@@ -102,7 +101,6 @@
 
 .info-bubble:hover{
 background-color: rgb(186, 186, 186);
-cursor: pointer;
 scale: 110%;
 }
 
@@ -113,6 +111,21 @@ scale: 110%;
     align-items: flex-start;
     justify-content: center;
     
+}
+
+#price-container{
+    width: 100px;
+    height: 60px;
+    padding: 20px;
+    background-color: rgb(88, 86, 86);
+    color: white;
+    margin: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 @media screen and (max-width: 768px) {

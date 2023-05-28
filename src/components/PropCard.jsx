@@ -31,8 +31,8 @@ function PropCard({value , setFavArr, favArr}) {
     <div id='card' className={favBtn ? 'favorite' : null}>
         <img id='pic' src={`${value.imgSrc}`} alt="" />
         <div id='info'>
-            <h3>{`${value.country}`}</h3>
-            <h3>{`${value.city}`}</h3>
+            <h3>{`${value.country},    ${value.city}`}</h3>
+           
         </div>
         <Link to={`/properties/${value.zpid}`}><Button variant="contained">View</Button></Link>
         <IconButton aria-label="favorite border icon" onClick={()=>handleClick()}>

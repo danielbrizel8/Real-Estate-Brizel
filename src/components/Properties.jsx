@@ -10,12 +10,12 @@ function Properties() {
   const [selectedValueCountry, setSelectedValueCountry] = useState("");
   const [selectedValueCity, setSelectedValueCity] = useState("");
   const [selectedValueBedrooms, setSelectedValueBedrooms] = useState("");
- 
+
   useEffect(() => {
     setTheData(data.results);
     setTheDataCopy(data.results);
   }, []);
-  
+
 
   const [filters, setFilters] = useState({
     country: "all",
@@ -23,7 +23,7 @@ function Properties() {
     bedrooms: "all",
   });
   const [favArr, setFavArr] = useState([]);
-  
+
   function sortByPrice(chosen) {
     if (chosen == "Low-To-High") {
       setTheData((prev) => [...prev].sort((a, b) => a.price - b.price));
@@ -48,7 +48,7 @@ function Properties() {
       );
     });
   }
-  
+
   function filterTheData() {
     let selectedFiltersKeys = [];
     let selectedFiltersValues = [];
@@ -60,9 +60,9 @@ function Properties() {
         selectedFiltersValues.push(values[k]);
       }
     }
-    
+
     for (let n = 0; n < selectedFiltersValues.length; n++) {
-      
+
       setTheData(
         TheData.filter(
           (value) => value[selectedFiltersKeys[n]] == selectedFiltersValues[n]
@@ -70,7 +70,7 @@ function Properties() {
       );
       // value.country == filters.country && value.city==filters.city && value.bedrooms==filters.bedrooms
     }
-    
+
   }
 
 
@@ -78,8 +78,8 @@ function Properties() {
     filterTheData()
   }, [filters]);
   console.log(filters);
- 
- 
+
+
   return (
     <div id="page-container">
       <div id="filter-section">
@@ -128,7 +128,7 @@ function Properties() {
           {createAnOption("bedrooms")}
         </select>
 
-       
+
         <button
           id="clear-btn"
           onClick={() => {
@@ -141,19 +141,21 @@ function Properties() {
         >
           clear
         </button>
-        
+
         <button onClick={() => setTheData([...new Set(favArr)])}>favorite</button>
       </div>
-      
-      <select id="sort" onChange={(e) => sortByPrice(e.target.value)}>
-        <option value="sort by price">Sort By Price</option>
-        <option value="high-to-low">High To Low</option>
-        <option value="Low-To-High">Low To High</option>
-      </select>
+
+      <div id="sort-section">
+        <select id="sort" onChange={(e) => sortByPrice(e.target.value)}>
+          <option value="sort by price">Sort By Price</option>
+          <option value="high-to-low">High To Low</option>
+          <option value="Low-To-High">Low To High</option>
+        </select>
+      </div>
       <div id="prop-section">
         {TheData &&
           TheData.map((value) => {
-            
+
             return (
               <PropCard
                 key={value?.zpid}
