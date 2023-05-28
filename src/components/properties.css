@@ -1,0 +1,19 @@
+#filter-section{
+    display: flex;
+    justify-content: center;
+    
+}
+
+select{
+    cursor: pointer;
+    
+}
+
+button{
+    cursor: pointer;
+}
+
+#sort{
+    display: flex;
+    justify-content: center;
+}
